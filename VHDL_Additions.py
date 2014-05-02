@@ -11,10 +11,10 @@ def parseEntity(view):
 
     regionList=view.find_by_selector('meta.block.entity.vhdl')
 
-    print "Regionlist:("+str(regionList)+")"
+    print("Regionlist:("+str(regionList)+")")
 
     mainSel = view.sel()[0]
-    print "Selection: "+str(mainSel)
+    print("Selection: "+str(mainSel))
     view.sel().clear()
     for r in regionList:
         
@@ -25,7 +25,7 @@ def parseEntity(view):
             entityReg = r
             entityText = view.substr(r)
             entityName=re.search(r"(?i)entity\s*(\w+)\s",entityText).group(1)
-            print "Name: "+entityName
+            print("Name: "+entityName)
 
     generic_elements = [r for r in view.find_by_selector('source.vhdl meta.block.entity.vhdl meta.block.generic_list.vhdl meta.block.parenthetical_list.vhdl meta.list.element.vhdl') if entityReg.contains(r)]
     port_elements = [r for r in view.find_by_selector('source.vhdl meta.block.entity.vhdl meta.block.port_list.vhdl meta.block.parenthetical_list.vhdl meta.list.element.vhdl') if entityReg.contains(r)]
@@ -46,7 +46,7 @@ def parseEntity(view):
             gdefault = matchObj.group(4)
             if gdefault != None:
                 gdefault = gdefault.strip()
-            #print "Generic: "+str(g)+"  ["+gname+"|"+gtype+"|"+str(gdefault)+"]"
+            #print("Generic: "+str(g)+"  ["+gname+"|"+gtype+"|"+str(gdefault)+"]")
             generics.append( (gname,gtype,gdefault) )
             
 
