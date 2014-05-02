@@ -1,0 +1,14 @@
+[
+	{ "caption": "-" },
+	{
+		"caption": "VHDL",
+		"children":
+		[
+			{"caption": "Copy as Component", "command": "vhdl_copy_as_component"},
+			{"caption": "Copy as Instance", "command": "vhdl_copy_as_instance"},
+			{"caption": "Copy as Signals", "command": "vhdl_copy_as_signals"},
+			{"caption": "Copy as SV Module", "command": "vhdl_copy_as_sv_module"},
+			{"caption": "Copy as SV Instance", "command": "vhdl_copy_as_sv_instance"}
+		]
+	}
+]
